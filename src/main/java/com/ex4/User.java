@@ -1,19 +1,31 @@
 package com.ex4;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class User {
 
     private String name;
     private String email;
-    private Address address;
+    private List<Address> addressList;
 
-    public User(String name, String email, Address address) {
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
-        this.address = address;
+        this.address = new ArrayList<>();
     }
 
     public void addAddress(Address address) {
-        this.address = address;
+        if(addressList != null) {
+            this.addressList.add(address);
+        }else {
+            throw new IllegalArgumentException("Address is null");
+        }
+    }
+
+    public List<Address> getAddress() {
+        return Collections.unmodifiableList(addressList);
     }
 
     public String getName() {
@@ -22,10 +34,6 @@ public class User {
 
     public String getEmail() {
         return email;
-    }
-
-    public Address getAddress() {
-        return address;
     }
 
     public void setName(String name) {

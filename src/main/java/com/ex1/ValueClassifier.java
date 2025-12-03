@@ -13,10 +13,10 @@ public class ValueClassifier {
         }
         if(isHighValue(value)){
             return Classification.ALTO;
-        }else{
-            return Classification.BAIXO;
         }
+        return Classification.BAIXO;
     };
+
     private boolean isSpecialValue(int value){
         return value == SPECIAL_CASE_VALUE;
     }
