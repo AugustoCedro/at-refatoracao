@@ -13,7 +13,7 @@ public class User {
     public User(String name, String email) {
         this.name = name;
         this.email = email;
-        this.address = new ArrayList<>();
+        this.addressList = new ArrayList<>();
     }
 
     public void addAddress(Address address) {
