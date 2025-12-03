@@ -17,11 +17,10 @@ public class User {
     }
 
     public void addAddress(Address address) {
-        if(addressList != null) {
-            this.addressList.add(address);
-        }else {
+        if(addressList == null) {
             throw new IllegalArgumentException("Address is null");
         }
+        this.addressList.add(address);
     }
 
     public List<Address> getAddress() {
